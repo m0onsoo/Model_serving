@@ -22,7 +22,7 @@ poetry env use python3
 poetry shell
 
 # 가상환경 비활성화
-poetry deactivate
+exit
 ```
 
 ### poetry install
