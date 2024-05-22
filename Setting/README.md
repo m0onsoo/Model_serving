@@ -4,13 +4,14 @@ pyenv로 가상환경을 생성하고 poetry로 라이브러리 버전을 관리
 ## Getting Started
 FastAPI 서버를 EC2에 올려 모델 서빙을 구현합니다.
 
+
 ### Prerequisites
 파이썬 가상환경 버전을 3.9.6으로 통일하기 위해 버전을 설치합니다.
-'''
+```
 pyenv install 3.9.6
-'''
+```
 해당 프로젝트에서만 사용할 로컬 파이썬 버전을 설정하고 가상환경을 생성합니다.
-'''
+```
 # local 파이썬 버전 설정
 pyenv local 3.9.6
 
@@ -22,32 +23,32 @@ poetry shell
 
 # 가상환경 비활성화
 poetry deactivate
-'''
+```
 
 ### poetry install
 pyproject.toml에 저장된 내용에 기반해 라이브러리 설치
-'''
+```
 poetry install
-'''
+```
 
 ### FastAPI 서버 실행
-FastAPI 서버를 실행하는 코드입니다.
+FastAPI 서버를 실행하는 코드입니다.  
 http://127.0.0.1:8000/docs에서 API 문서를 확인할 수 있습니다.
-'''
+```
 poetry run uvicorn backend.main:app
-'''
+```
 
 ## 라이브러리 추가 설치/삭제
-poetry add 뒤에 라이브러리 이름을 적어주면 자동으로 호환되는 버전을 다운받습니다.
+poetry add 뒤에 라이브러리 이름을 적어주면 자동으로 호환되는 버전을 다운받습니다.  
 이는 pyporject.toml에 추가됩니다.
-'''
+```
 # example
 poetry add fastapi
-'''
+```
 특정 라이브러리를 삭제할 때는 poetry remove를 사용합니다.
-'''
+```
 poetry remove libray-name
-'''
+```
 
 
 ## Reference
