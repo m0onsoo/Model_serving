@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "palette-serving"
+version = "0.1.0"
+description = "Repository for serving a model for Palette"
+authors = ["Moonsoo Park <kd.mpark10@gmail.com>"]
+license = "MIT"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.9"
+fastapi = "^0.111.0"
+uvicorn = "^0.29.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
