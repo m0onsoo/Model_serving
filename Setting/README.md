@@ -35,7 +35,7 @@ poetry install
 FastAPI 서버를 실행하는 코드입니다.  
 http://127.0.0.1:8000/docs에서 API 문서를 확인할 수 있습니다.
 ```
-poetry run uvicorn backend.main:app
+poetry run uvicorn api.main:app
 ```
 
 ## 라이브러리 추가 설치/삭제
