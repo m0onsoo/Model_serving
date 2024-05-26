@@ -46,6 +46,7 @@ app = FastAPI()
 def root():
     return {"Default": "Hello World-!"}
 
+
 # 단일 유저 추천
 @app.get("/recommend")
 async def recommend(user: int):
@@ -87,7 +88,7 @@ async def recommend_couple(user1: int, user2: int):
         "result": result_restaurant_list
     }
 
-    return result_dict
+    return json.dumps(result_dict)
 
 
 # main
