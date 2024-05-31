@@ -91,7 +91,7 @@ async def recommend_couple(user1: int, user2: int, district: str):
     ids_query = ', '.join(map(str, result_restaurant_list))
 
     # 결과값에 매칭되는 RST/CAFE/BAR인지의 types 리스트 요청
-    sql = f"SELECT type FROM restaurant WHERE restaurant_id IN ({ids_query})"
+    sql = f"SELECT name, type FROM restaurant WHERE restaurant_id IN ({ids_query}) ORDER BY FIELD(restaurant_id, {ids_query})"
     cursor.execute(sql)
     types = cursor.fetchall()
 
