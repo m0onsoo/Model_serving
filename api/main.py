@@ -49,7 +49,7 @@ async def recommend(user: int):
     user_embedding_vector = torch.tensor(user_embedding.loc[user,'embedding'])
     
     # 단일 유저 추론
-    one_user_predict = activate_f(torch.matmul(user_embedding_vector,embeddings_tensor.t()))
+    one_user_predict = activate_f(torch.matmul(user_embedding_vector,embeddings_tensor_KJ.t()))
     _, one_user_rating = torch.topk(one_user_predict, k=100)
     result_restaurant_list = np.array(one_user_rating).tolist()
 
@@ -120,7 +120,7 @@ async def recommend_couple(user1: int, user2: int, district: str):
 
 # Test
 @app.get("/test/couple")
-async def recommend_couple(user1: int, user2: int):
+async def test_couple(user1: int, user2: int):
     # 각 유저의 임베딩 텐서화
     user1_embedding_vector = torch.tensor(user_embedding.loc[user1,'embedding'])
     user2_embedding_vector = torch.tensor(user_embedding.loc[user2,'embedding'])
