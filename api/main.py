@@ -98,7 +98,7 @@ async def recommend_couple(user1: int, user2: int, district: str):
     # 결과값 음식점/카페/술집 분리
     RST, CAFE, BAR = [], [], []
     for result_id, type in zip(result_restaurant_list, types):
-        category = type[0]
+        category = type[1]
 
         if category == 'RST':
             RST.append(result_id)
