@@ -35,7 +35,17 @@ poetry install
 FastAPI 서버를 실행하는 코드입니다.  
 http://127.0.0.1:8000/docs에서 API 문서를 확인할 수 있습니다.
 ```
+# local
 poetry run uvicorn api.main:app
+
+# EC2 server에서 백그라운드 실행
+nohup uvicorn api.main:app --host 0.0.0.0 --port 8000
+
+# 현재 실행중인 프로세스 확인
+ps -ef
+
+# 프로세스 강제 종료
+kill -9 pid
 ```
 
 ## 라이브러리 추가 설치/삭제
