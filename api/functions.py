@@ -18,7 +18,7 @@ DB = 'palette'
 
 # SQL Database에 연결
 def DB_CONNECT():
-    conn = pymysql.connect(
+    connection = pymysql.connect(
         host = MODEL_HOST,
         port = MODEL_PORT,
         user = MODEL_USER,
@@ -27,9 +27,9 @@ def DB_CONNECT():
         charset = 'utf8mb4'
     )
 
-    cursor = conn.cursor()
+    connection
 
-    return cursor
+    return connection
 
 def DATA_LOADER():
     # 현재 파일(main.py)의 디렉토리 경로를 가져옵니다.
