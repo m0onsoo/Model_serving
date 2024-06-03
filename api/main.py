@@ -66,7 +66,7 @@ async def recommend(user: int):
 async def recommend_couple(user1: int, user2: int, district: str):
     # DB 연결 재확인
     connection.ping(reconnect=True)
-    
+
     # 각 유저의 임베딩 텐서화
     user1_embedding_vector = torch.tensor(user_embedding.loc[user1,'embedding'])
     user2_embedding_vector = torch.tensor(user_embedding.loc[user2,'embedding'])
