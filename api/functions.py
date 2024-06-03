@@ -8,16 +8,16 @@ from dotenv import  load_dotenv
 
 load_dotenv()  # .env 파일을 불러와 환경 변수 설정
 
-
-MODEL_HOST = 'palette-db.c10es6yky6c8.ap-northeast-2.rds.amazonaws.com'
-MODEL_PORT = 3306
-MODEL_USER = 'model'
-MODEL_PW = '1234'
-DB = 'palette'
+MODEL_HOST = os.getenv('MODEL_HOST')
+MODEL_PORT = int(os.getenv('MODEL_PORT'))
+MODEL_USER = os.getenv('MODEL_USER')
+MODEL_PW = os.getenv('MODEL_PW')
+DB = os.getenv('DB')
 
 
 # SQL Database에 연결
 def DB_CONNECT():
+    print("HOST:", MODEL_HOST)
     connection = pymysql.connect(
         host = MODEL_HOST,
         port = MODEL_PORT,
@@ -26,8 +26,6 @@ def DB_CONNECT():
         db = DB,
         charset = 'utf8mb4'
     )
-
-    connection
 
     return connection
 
