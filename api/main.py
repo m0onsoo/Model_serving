@@ -9,8 +9,8 @@ import pymysql
 
 
 # DB에 연결
-cursor = functions.DB_CONNECT()
-
+connection = functions.DB_CONNECT()
+cursor = connection.cursor()
 
 # 유저/레스토랑 임베딩 텐서 로드
 user_embedding, restaurant_embedding_KJ, restaurant_embedding_HD, restaurant_embedding_JS = functions.DATA_LOADER()
@@ -64,6 +64,9 @@ async def recommend(user: int):
 # 커플 유저 추천
 @app.get("/recommend/couple")
 async def recommend_couple(user1: int, user2: int, district: str):
+    # DB 연결 재확인
+    connection.ping(reconnect=True)
+    
     # 각 유저의 임베딩 텐서화
     user1_embedding_vector = torch.tensor(user_embedding.loc[user1,'embedding'])
     user2_embedding_vector = torch.tensor(user_embedding.loc[user2,'embedding'])
