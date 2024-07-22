@@ -4,7 +4,7 @@ Repository for serving models of the Palette service
 ## Description
 
 Palette is a dating course recommendation platform for couples. <br>
-This repository covers serving the [recommendation AI model](https://github.com/SJU-Capstone-DS-DayOne/Model) used in the palette.
+This repository covers serving the [recommendation AI model](https://github.com/SJU-Capstone-DS-DayOne/Model) used in the Palette.
 
 ## Method
 
