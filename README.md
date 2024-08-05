@@ -1,5 +1,8 @@
-# Model_serving
-Repository for serving models of the Palette service
+# Palette-FastAPI-model-deployment
+Repository for serving models of the Palette service using FastAPI framework on EC2 server 
+
+<img width="460" alt="Fastapi_ec2" src="https://github.com/user-attachments/assets/db345919-e25a-45ea-a015-62b736719dbf">
+
 
 ## Description
 
@@ -11,6 +14,16 @@ This repository covers serving the [recommendation AI model](https://github.com/
 - Implement model serving by loading the FastAPI web framework on EC2
 - Provides real-time recommendation inference results
 - Access the database and parse the returned restaurant IDs by category
+
+## Contributions
+
+- Version management in virtual environments using pyenv and poetry
+- Implementing very fast response times suitable for real-time services
+- Runs in server background for continuous operation
+
+## How to use
+
+There are [instructions](https://github.com/SJU-Capstone-DS-DayOne/Palette-FastAPI-model-deployment/blob/main/Setting/README.md) to run the server
 
 ## Reference
 * [FastAPI](https://fastapi.tiangolo.com/ko/) - A web framework for building APIs in Python
